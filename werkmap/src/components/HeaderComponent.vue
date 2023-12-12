@@ -5,13 +5,13 @@
 <template>
   <nav>
     <ul class="navbar">
-      <li><a href="startpagina.html">Home</a></li>
-      <li><a href="productpage.html">Producten</a></li>
-      <li><a href="playstation.html">Playstation</a></li>
-      <li><a href="#">XBOX</a></li>
-      <li><a href="#">Nintendo</a></li>
-      <li><a href="#">Winkelmand</a></li>
-      <li><a href="inlogpagina.html">Login</a></li>
+      <li><router-link to="/home">Home</router-link></li>
+      <li><router-link to="/products">Producten</router-link></li>
+      <li><router-link to="/playstation">Playstation</router-link></li>
+      <li><router-link to="/xbox">XBOX</router-link></li>
+      <li><router-link to="/nintendo">Nintendo</router-link></li>
+      <li><router-link to="/winkelmand">Winkelmand</router-link></li>
+      <li><router-link to="/login">Login</router-link></li>
       <li class="right"><a href="#contact">Contact</a></li>
     </ul>
   </nav>

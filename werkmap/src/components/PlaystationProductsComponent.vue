@@ -3,29 +3,16 @@
 </script>
 
 <template>
+
   <div id="producten">
-    <h1>Onze Producten</h1>
+    <h1>Producten</h1>
     <ul class="product-list">
       <li class="product">
         <h2>Playstation 5</h2>
         <img src="@/afbeeldingen/nik-wmY7gKdYSmI-unsplash.jpg">
         <p>Playstation PS5 825 GB</p>
         <p>Prijs: €559,00</p>
-        <button class="add-to-cart">Bekijk</button>
-      </li>
-      <li class="product">
-        <h2>Xbox series X</h2>
-        <img src="@/afbeeldingen/billy-freeman-DPOdCl4bGJU-unsplash.jpg">
-        <p>MICROSOFT Xbox Series X 1TB</p>
-        <p>Prijs: €544,00</p>
-        <button class="add-to-cart">Bekijk</button>
-      </li>
-      <li class="product">
-        <h2>Nintendo Switch</h2>
-        <img src="@/afbeeldingen/tobiah-ens-bHnbqJBTwLs-unsplash.jpg">
-        <p>NINTENDO Switch Rood / Blauw</p>
-        <p>Prijs: €290,00</p>
-        <button class="add-to-cart">Bekijk</button>
+        <button class="add-to-cart"><a href="itempage.html">Bekijk</a></button>
       </li>
       <li class="product">
         <h2>Ps5 controller</h2>
@@ -35,17 +22,10 @@
         <button class="add-to-cart">Bekijk</button>
       </li>
       <li class="product">
-        <h2>Xbox controller</h2>
-        <img src="@/afbeeldingen/oli-woodman-0v0VzQW_oqo-unsplash.jpg">
-        <p>MICROSOFT Draadloze controller Xbox Series</p>
-        <p>Prijs: €65,00</p>
-        <button class="add-to-cart">Bekijk</button>
-      </li>
-      <li class="product">
-        <h2>Nintendo switch controller</h2>
-        <img src="@/afbeeldingen/sara-kurfess-jqpRECmiNEU-unsplash.jpg">
-        <p>NINTENDO Switch Joy-Con-controllerset</p>
-        <p>Prijs: $75,00</p>
+        <h2>Ps4 controller</h2>
+        <img src="@/afbeeldingen/pexels-stas-knop-2520829.jpg">
+        <p>PLAYSTATION Draadloze controller PS4 Dualshock 4</p>
+        <p>Prijs: €59,99</p>
         <button class="add-to-cart">Bekijk</button>
       </li>
 
@@ -55,6 +35,7 @@
 </template>
 
 <style scoped>
+
 /* Stijlen voor de productencontainer */
 #producten {
   margin-top: 100px;
@@ -116,6 +97,7 @@
   height: 170px;
   border-radius: 10%;
 }
+
 
 
 </style>
