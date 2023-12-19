@@ -6,7 +6,7 @@
     <img src="@/afbeeldingen/pexels-pixabay-459762.jpg" alt="Afbeelding controller">
     <h1>Welkom</h1>
     <p>Fan van gaming? Check zeker onze producten!</p>
-    <button><a href="productpage.html">Producten</a></button>
+    <button><router-link to="/products">Producten</router-link></button>
   </div>
 </template>
 

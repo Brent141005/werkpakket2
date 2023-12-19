@@ -6,6 +6,9 @@ import ProductCardComponent from "@/components/ProductCardComponent.vue";
 
 
 
+
+
+
 </script>
 
 <template>

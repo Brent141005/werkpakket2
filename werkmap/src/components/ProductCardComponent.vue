@@ -12,6 +12,7 @@
         <p>Playstation PS5 825 GB</p>
         <p>Prijs: €559,00</p>
         <button class="add-to-cart">Bekijk</button>
+        <button class="add-to-cart add-to-cart-secondary" @click="addToCart('Playstation 5')">Voeg toe</button>
       </li>
       <li class="product">
         <h2>Xbox series X</h2>
@@ -19,6 +20,7 @@
         <p>MICROSOFT Xbox Series X 1TB</p>
         <p>Prijs: €544,00</p>
         <button class="add-to-cart">Bekijk</button>
+        <button class="add-to-cart add-to-cart-secondary" @click="addToCart('Xbox series X')">Voeg toe</button>
       </li>
       <li class="product">
         <h2>Nintendo Switch</h2>
@@ -26,6 +28,7 @@
         <p>NINTENDO Switch Rood / Blauw</p>
         <p>Prijs: €290,00</p>
         <button class="add-to-cart">Bekijk</button>
+        <button class="add-to-cart add-to-cart-secondary" @click="addToCart('Nintendo Switch')">Voeg toe</button>
       </li>
       <li class="product">
         <h2>Ps5 controller</h2>
@@ -33,6 +36,7 @@
         <p>PLAYSTATION Draadloze controller PS5 DualSense</p>
         <p>Prijs: €70,00</p>
         <button class="add-to-cart">Bekijk</button>
+        <button class="add-to-cart add-to-cart-secondary" @click="addToCart('Ps5 controller')">Voeg toe</button>
       </li>
       <li class="product">
         <h2>Xbox controller</h2>
@@ -40,6 +44,7 @@
         <p>MICROSOFT Draadloze controller Xbox Series</p>
         <p>Prijs: €65,00</p>
         <button class="add-to-cart">Bekijk</button>
+        <button class="add-to-cart add-to-cart-secondary" @click="addToCart('Xbox controller')">Voeg toe</button>
       </li>
       <li class="product">
         <h2>Nintendo switch controller</h2>
@@ -47,6 +52,7 @@
         <p>NINTENDO Switch Joy-Con-controllerset</p>
         <p>Prijs: $75,00</p>
         <button class="add-to-cart">Bekijk</button>
+        <button class="add-to-cart add-to-cart-secondary" @click="addToCart('Nintendo switch controller')">Voeg toe</button>
       </li>
 
     </ul>
@@ -115,6 +121,15 @@
   width: 250px;
   height: 170px;
   border-radius: 10%;
+}
+
+#producten .product .add-to-cart-secondary {
+  margin-left: 10px;
+  background-color: #28a745;
+}
+
+#producten .product .add-to-cart-secondary:hover {
+  background-color: #218838;
 }
 
 

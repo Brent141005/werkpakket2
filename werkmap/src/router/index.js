@@ -4,6 +4,7 @@ import ProductsView from "@/views/ProductsView.vue";
 import PlaystationView from "@/views/PlaystationView.vue";
 import LoginView from "@/views/LoginView.vue";
 import WinkelkarView from "@/views/WinkelkarView.vue";
+import ItemView from "@/views/ItemView.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -14,6 +15,7 @@ const router = createRouter({
         { path: '/playstation', component:PlaystationView},
         { path: '/login', component:LoginView},
         { path: '/winkelmand', component:WinkelkarView},
+        { path: '/item', component:ItemView},
     ]
 });
 

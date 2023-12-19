@@ -10,7 +10,7 @@
         <img src="@/afbeeldingen/nik-wmY7gKdYSmI-unsplash.jpg">
         <p>Playstation PS5 825 GB</p>
         <p>Prijs: €559,00</p>
-        <button class="add-to-cart"><a href="itempage.html">Bekijk</a></button>
+        <button class="add-to-cart"><router-link to="/item">Bekijk</router-link></button>
       </li>
       <li class="product">
         <h2>Xbox series X</h2>

@@ -3,18 +3,26 @@ export default {
   data() {
     return {
       cart: [
-        { id: 1, name: 'Playstation', price: 20.00, image: 'nik-wmY7gKdYSmI-unsplash.jpg' },
-        { id: 2, name: 'Product 2', price: 30.00, image: 'nik-wmY7gKdYSmI-unsplash.jpg' },
-        // Voeg meer producten toe indien nodig
+        { id: 1, name: 'Playstation', price: 20.00, quantity: 1, image: 'nik-wmY7gKdYSmI-unsplash.jpg' },
+        { id: 2, name: 'Product 2', price: 30.00, quantity: 1, image: 'nik-wmY7gKdYSmI-unsplash.jpg' },
+        // Voeg meer producten toe met de eigenschap 'quantity' indien nodig
       ],
     };
   },
   methods: {
     calculateTotal() {
-      return this.cart.reduce((total, product) => total + product.price, 0);
+      return this.cart.reduce((total, product) => total + product.price * product.quantity, 0);
     },
     removeProduct(index) {
       this.cart.splice(index, 1);
+    },
+    increaseQuantity(index) {
+      this.cart[index].quantity++;
+    },
+    decreaseQuantity(index) {
+      if (this.cart[index].quantity > 1) {
+        this.cart[index].quantity--;
+      }
     },
   },
 };
@@ -24,16 +32,19 @@ export default {
   <div>
     <div class="cart-container">
       <div v-for="(product, index) in cart" :key="product.id" class="cart-item">
-        <img :src="`/src/afbeeldingen/${product.image}`" :alt="product.name">
-        <div>
-          <h3>{{ product.name }}</h3>
-          <p>Price: ${{ product.price.toFixed(2) }}</p>
+        <img :src="`/src/afbeeldingen/${product.image}`" :alt="product.name" class="product-image">
+        <div class="product-details">
+          <h3 class="product-name">{{ product.name }}</h3>
+          <p class="product-price">Prijs: ${{ product.price.toFixed(2) }}</p>
+          <p class="product-quantity">Aantal: {{ product.quantity }}</p>
+          <button @click="increaseQuantity(index)" class="quantity-button">Verhoog</button>
+          <button @click="decreaseQuantity(index)" class="quantity-button">Verlaag</button>
         </div>
-        <button class="remove-button" @click="removeProduct(index)">Remove</button>
+        <button class="remove-button" @click="removeProduct(index)">Verwijderen</button>
       </div>
 
       <div class="cart-total">
-        <p>Total: ${{ calculateTotal().toFixed(2) }}</p>
+        <p class="total-text">Totaal: ${{ calculateTotal().toFixed(2) }}</p>
       </div>
     </div>
   </div>
@@ -64,17 +75,39 @@ body {
   padding: 10px 0;
 }
 
-.cart-item img {
+.product-image {
   max-width: 100px;
   max-height: 100px;
   margin-right: 10px;
   border-radius: 10px;
 }
 
-.cart-total {
-  margin-top: 20px;
+.product-details {
+  flex-grow: 1;
+}
+
+.product-name {
   font-size: 18px;
-  text-align: right;
+}
+
+.product-price {
+  font-size: 14px;
+  color: #888;
+}
+
+.product-quantity {
+  font-size: 14px;
+  color: #888;
+}
+
+.quantity-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
 }
 
 .remove-button {
@@ -90,4 +123,16 @@ body {
 .remove-button:hover {
   background-color: #d9534f;
 }
+
+.cart-total {
+  margin-top: 20px;
+  font-size: 18px;
+  text-align: right;
+}
+
+.total-text {
+  margin: 0;
+  color: #333;
+}
 </style>
+

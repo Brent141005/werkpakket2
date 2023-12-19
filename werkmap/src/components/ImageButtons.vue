@@ -3,12 +3,12 @@
 
 <template>
   <div class="image-buttons">
-    <a href="playstation.html">
+    <router-link to="/playstation">
       <button class="image-button">
         <img src="@/afbeeldingen/kerde-severin-NVD_32BBZFE-unsplash.jpg" alt="Afbeelding 1">
         <p>Playstation</p>
       </button>
-    </a>
+    </router-link>
     <button class="image-button">
       <img src="@/afbeeldingen/pexels-corentin-detry-4491606.jpg" alt="Afbeelding 2">
       <p>Xbox</p>
