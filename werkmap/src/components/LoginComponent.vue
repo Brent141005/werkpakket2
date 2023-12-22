@@ -32,7 +32,7 @@
   text-align: center;
   margin: 50px auto;
   max-width: 400px;
-  padding: 50px;
+  padding: 49px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #fff;
