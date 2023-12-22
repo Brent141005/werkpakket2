@@ -17,7 +17,7 @@ export default {
 <template>
   <li class="product">
     <h2>{{ product.title }}</h2>
-    <img src="@/afbeeldingen/nik-wmY7gKdYSmI-unsplash.jpg">
+    <img :src="`/src/afbeeldingen/${product.image}`" :alt="product.title">
     <p>{{ product.description }}</p>
     <p>Prijs: €{{ product.price }}</p>
     <router-link class="add-to-cart" :to="{ name: 'product-detail', params: { id: product.id }}">Bekijk</router-link>

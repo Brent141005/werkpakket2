@@ -53,7 +53,7 @@ export default {
       </div>
     </div>
 
-    <router-link to="checkout">Ga verder naar betalen</router-link>
+    <router-link to="checkout" class="checkout-link">Ga verder naar betalen</router-link>
   </div>
 </template>
 
@@ -140,6 +140,23 @@ body {
 .total-text {
   margin: 0;
   color: #333;
+}
+
+.checkout-link {
+  display: block;
+  margin: 20px auto;
+  width: 200px;
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.checkout-link:hover {
+  background-color: #0056b3;
 }
 </style>
 

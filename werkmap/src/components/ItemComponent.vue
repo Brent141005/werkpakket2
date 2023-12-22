@@ -27,7 +27,7 @@ export default {
 <template>
 
   <div class="product-detail" v-if="product">
-    <img src="@/afbeeldingen/nik-wmY7gKdYSmI-unsplash.jpg" alt="Product Name">
+    <img :src="`/src/afbeeldingen/${product.image}`" :alt="product.title">
 
     <div class="product-info">
       <h1>{{product.title}}</h1>
