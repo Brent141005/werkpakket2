@@ -1,28 +1,41 @@
-<script setup>
+<script>
+import ProductsService from "@/services/products.service";
+import {cartStore} from "@/stores/cart";
 
+
+export default {
+  data() {
+    return {
+      product: null,
+      cart: cartStore()
+    };
+  },
+  mounted() {
+    this.loadProduct();
+  },
+  methods: {
+    async loadProduct() {
+      const productId = this.$route.params.id;
+      // Assuming your ProductService has a method to fetch a single product by ID
+      // You might need to modify this based on your actual data structure
+      this.product = await ProductsService.getProductById(productId);
+    }
+  }
+};
 </script>
 
 <template>
 
-  <div class="product-detail">
+  <div class="product-detail" v-if="product">
     <img src="@/afbeeldingen/nik-wmY7gKdYSmI-unsplash.jpg" alt="Product Name">
 
     <div class="product-info">
-      <h1>Playstation 5</h1>
-      <p>Laat je naar verbijsterend realistische werelden meeslepen met de Playstation
-        PS5 spelconsole. Ga op in levensechte graphics dankzij Ray Tracing-technologie
-        en ondersteuning voor 120 fps op 4K-beeldschermen. Ray Tracing simuleert lichtstralen individueel
-        voor een nog realistischere weergave van licht en schaduw. De geavanceerde controller met haptische
-        feedback trilt waarheidsgetrouw met gebeurtenissen in het spel mee. Wapens en andere uitrusting worden
-        extra tastbaar vanwege de responsieve triggers. Zo imiteert de controller bijvoorbeeld het gevoel
-        van een terugslag wanneer je de trekker overhaalt. Je kan via de ingebouwde microfoon met andere
-        spelers communiceren. Omring jezelf met waarheidsgetrouw omgevingsgeluid met behulp van 3D-audio.
-        Geniet van snellere laadtijden dankzij het bijzonder snelle ingebouwde SSD-geheugen.
-      </p>
+      <h1>{{product.title}}</h1>
+      <p>{{product.description}}</p>
     </div>
 
     <div class="product-price">
-      <span class="original-price">€ 559,00</span>
+      <span class="original-price">€ {{product.price}}</span>
     </div>
 
     <div class="product-stock">
@@ -34,7 +47,7 @@
     </div>
 
     <div class="store-options">
-      <button class="order-button">Toevoegen aan winkelmand</button>
+      <button class="order-button" @click="cart.addToCart(product, 1)">Toevoegen aan winkelmand</button>
     </div>
 
   </div>

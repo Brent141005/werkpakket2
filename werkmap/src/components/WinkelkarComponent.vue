@@ -1,8 +1,13 @@
 <script>
+
+import {cartStore} from "@/stores/cart";
+import {createPinia} from "pinia";
+
 export default {
   data() {
     return {
-      cart: [
+      products: cartStore().products,
+      cartOld: [
         { id: 1, name: 'Playstation', price: 20.00, quantity: 1, image: 'nik-wmY7gKdYSmI-unsplash.jpg' },
         { id: 2, name: 'Product 2', price: 30.00, quantity: 1, image: 'nik-wmY7gKdYSmI-unsplash.jpg' },
         // Voeg meer producten toe met de eigenschap 'quantity' indien nodig
@@ -11,17 +16,17 @@ export default {
   },
   methods: {
     calculateTotal() {
-      return this.cart.reduce((total, product) => total + product.price * product.quantity, 0);
+      return this.products.reduce((total, product) => total + product.price * product.quantity, 0);
     },
     removeProduct(index) {
-      this.cart.splice(index, 1);
+      this.products.splice(index, 1);
     },
     increaseQuantity(index) {
-      this.cart[index].quantity++;
+      this.products[index].quantity++;
     },
     decreaseQuantity(index) {
-      if (this.cart[index].quantity > 1) {
-        this.cart[index].quantity--;
+      if (this.products[index].quantity > 1) {
+        this.products[index].quantity--;
       }
     },
   },
@@ -31,10 +36,10 @@ export default {
 <template>
   <div>
     <div class="cart-container">
-      <div v-for="(product, index) in cart" :key="product.id" class="cart-item">
+      <div v-for="(product, index) in products" :key="product.id" class="cart-item">
         <img :src="`/src/afbeeldingen/${product.image}`" :alt="product.name" class="product-image">
         <div class="product-details">
-          <h3 class="product-name">{{ product.name }}</h3>
+          <h3 class="product-name">{{ product.title }}</h3>
           <p class="product-price">Prijs: ${{ product.price.toFixed(2) }}</p>
           <p class="product-quantity">Aantal: {{ product.quantity }}</p>
           <button @click="increaseQuantity(index)" class="quantity-button">Verhoog</button>
@@ -47,6 +52,8 @@ export default {
         <p class="total-text">Totaal: ${{ calculateTotal().toFixed(2) }}</p>
       </div>
     </div>
+
+    <router-link to="checkout">Ga verder naar betalen</router-link>
   </div>
 </template>
 

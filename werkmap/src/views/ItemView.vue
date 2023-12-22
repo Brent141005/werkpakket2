@@ -1,18 +1,9 @@
 <script setup>
-
-import HeaderComponent from "@/components/HeaderComponent.vue";
-import FooterComponent from "@/components/FooterComponent.vue";
-import ItemViewComponent from "@/components/ItemViewComponent.vue";
-
-
-
+import ItemComponent from "@/components/ItemComponent.vue";
 </script>
 
 <template>
-  <header-component/>
-  <item-view-component/>
-  <footer-component/>
-
+  <item-component/>
 </template>
 
 <style scoped>
